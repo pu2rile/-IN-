@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 오른쪽에 배치 */
+  padding: 0 20px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.header .cart-icon-container {
+  position: relative;
+}
+
+.header .cart-icon {
+  width: 24px; /* 이미지 크기를 줄임 */
+  height: 24px;
+}
+
+.header .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.header .back-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: auto; /* 왼쪽으로 정렬 */
+}
+
+.header .back-button:hover {
+  color: #61dafb;
+}
+
+.content {
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px; /* 카드 간격 추가 */
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(50% - 40px); /* 두 개의 컬럼을 만들기 위해 */
+  height: 400px; /* 높이를 추가하여 직사각형 모양으로 변경 */
+  box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 공간을 고르게 배치 */
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* 이미지의 최대 높이를 설정하여 균형 잡힌 카드 */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  object-fit: cover; /* 이미지가 카드 크기에 맞춰지도록 설정 */
+}
+
+.cart {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  flex: 1;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:last-child {
+  margin-right: 0;
+}
