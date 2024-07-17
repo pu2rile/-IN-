@@ -1,10 +1,10 @@
-import React from 'react';
-import { CartProvider, useCart } from './context/CartContext'; // useCart 가져오기
+import React, { useState } from 'react';
+import { CartProvider, useCart } from './context/CartContext';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import CartPage from './components/CartPage';
-import ProductDetail from './components/ProductDetail'; // 상품 상세 페이지 컴포넌트 가져오기
+import ProductDetail from './components/ProductDetail';
 import './App.css';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} /> {/* 상품 상세 페이지 라우트 추가 */}
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </CartProvider>
@@ -23,12 +23,13 @@ const App = () => {
 };
 
 const Home = () => {
-  const { cart } = useCart();
+  const [productCount, setProductCount] = useState(0);
+
   return (
     <>
       <h1>신발 상품 목록</h1>
-      <div>현재 {cart.length}개의 상품이 있습니다.</div>
-      <ProductList />
+      <div>현재 {productCount}개의 상품이 있습니다.</div>
+      <ProductList onProductCount={setProductCount} />
     </>
   );
 };
