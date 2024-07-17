@@ -7,19 +7,36 @@ header {
   min-height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* 오른쪽에 배치 */
+  justify-content: space-between;
   padding: 0 20px;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.header .back-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header .back-button:hover {
+  color: #61dafb;
+}
+
 .header .cart-icon-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto; /* 오른쪽 끝으로 배치 */
 }
 
 .header .cart-icon {
   width: 24px; /* 이미지 크기를 줄임 */
   height: 24px;
+  object-fit: contain;
 }
 
 .header .cart-count {
@@ -33,17 +50,9 @@ header {
   font-size: 12px;
 }
 
-.header .back-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin-right: auto; /* 왼쪽으로 정렬 */
-}
-
-.header .back-button:hover {
-  color: #61dafb;
+.header .cart-text {
+  margin-top: 4px; /* 아이콘과 텍스트 사이의 간격 */
+  font-size: 12px;
 }
 
 .content {
@@ -63,7 +72,7 @@ header {
   border-radius: 10px;
   padding: 20px;
   width: calc(50% - 40px); /* 두 개의 컬럼을 만들기 위해 */
-  height: 400px; /* 높이를 추가하여 직사각형 모양으로 변경 */
+  height: 450px; /* 높이를 추가하여 직사각형 모양으로 변경 */
   box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

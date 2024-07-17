@@ -1,9 +1,10 @@
 import React from 'react';
-import { CartProvider, useCart } from './context/CartContext';
+import { CartProvider, useCart } from './context/CartContext'; // useCart 가져오기
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import CartPage from './components/CartPage';
+import ProductDetail from './components/ProductDetail'; // 상품 상세 페이지 컴포넌트 가져오기
 import './App.css';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} /> {/* 상품 상세 페이지 라우트 추가 */}
         </Routes>
       </div>
     </CartProvider>

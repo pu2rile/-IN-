@@ -22,10 +22,13 @@ const Header = () => {
           뒤로가기
         </button>
       )}
-      <div className="cart-icon-container" onClick={handleCartClick} style={{ cursor: 'pointer' }}>
-        <img src="/cart-icon.png" alt="Cart" className="cart-icon" />
-        <span className="cart-count">{cart.length}</span>
-      </div>
+      {location.pathname !== '/cart' && (
+        <div className="cart-icon-container" onClick={handleCartClick} style={{ cursor: 'pointer' }}>
+          <img src="/cart-icon.png" alt="Cart" className="cart-icon" />
+          <span className="cart-count">{cart.length}</span>
+          <div className="cart-text">Cart</div>
+        </div>
+      )}
     </header>
   );
 };
