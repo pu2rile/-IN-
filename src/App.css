@@ -128,3 +128,9 @@ button:disabled {
 button:last-child {
   margin-right: 0;
 }
+
+button.added {
+  background-color: #ccc; /* 회색 배경색 */
+  color: black; /* 검은색 글자색 */
+  cursor: default;
+}
