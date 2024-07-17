@@ -11,16 +11,13 @@ const AddToCartButton = ({ product }) => {
   const isAdded = isProductAdded(product.id);
 
   return (
-    <div className="button-container">
-      <button 
-        onClick={handleAddToCart} 
-        disabled={isAdded} 
-        className={isAdded ? 'added' : ''}
-      >
-        {isAdded ? '담김!' : '담기'}
-      </button>
-      <button onClick={() => {}}>구매</button> {/* 빈 함수로 설정 */}
-    </div>
+    <button 
+      onClick={handleAddToCart} 
+      disabled={isAdded} 
+      className={isAdded ? 'added' : ''}
+    >
+      {isAdded ? '담김!' : '담기'}
+    </button>
   );
 };
 
