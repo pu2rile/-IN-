@@ -4,9 +4,10 @@ import AddToCartButton from './AddToCartButton';
 
 // ProductItem 컴포넌트는 단일 상품의 정보를 표시
 const ProductItem = ({ product }) => {
+  // useNavigate 훅을 사용하여 네비게이션 기능 사용
   const navigate = useNavigate();
 
-  // handleCardClick 함수는 상품 카드를 클릭했을 때 해당 상품 상세 페이지로 이동
+  // handleCardClick 함수는 상품 카드를 클릭했을 때 상품 상세 페이지로 이동
   const handleCardClick = () => {
     navigate(`/product/${product.id}`);
   };
@@ -27,7 +28,7 @@ const ProductItem = ({ product }) => {
         {/* 포맷팅된 가격 표시 */}
         <div className="product-price">{formattedPrice}원</div>
       </div>
-      {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시*/}
+      {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시 */}
       <AddToCartButton product={product} />
     </div>
   );

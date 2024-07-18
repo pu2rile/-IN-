@@ -1,13 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import AddToCartButton from './AddToCartButton';
 
-// ProductDetail 컴포넌트는 단일 상품의 상세 정보를 표시
+// ProductDetail 컴포넌트는 단일 상품의 상세 정보 표시
 const ProductDetail = () => {
   // useParams 훅을 사용하여 URL에서 상품 ID를 가져옴
   const { id } = useParams();
-  // useCart 훅을 사용하여 장바구니 상태와 addToCart 함수를 가져옴
-  const { cart, addToCart } = useCart();
 
   // 하드코딩된 상품 데이터 배열
   const products = [
@@ -37,8 +35,8 @@ const ProductDetail = () => {
       <p>{product.description}</p>
       {/* 상품 가격 표시 */}
       <p>{product.price.toLocaleString('ko-KR')}원</p>
-      {/* "장바구니에 담기" 버튼을 표시하고, 클릭 시 addToCart 함수를 호출하여 상품을 장바구니에 추가 */}
-      <button onClick={() => addToCart(product)}>장바구니에 담기</button>
+      {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시 */}
+      <AddToCartButton product={product} />
     </div>
   );
 };
