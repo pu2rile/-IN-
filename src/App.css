@@ -147,3 +147,24 @@ button:disabled {
 button:last-child {
   margin-right: 0;
 }
+
+/* 상품 이름 텍스트 스타일 */
+.product-name {
+  font-size: 23px; /* 텍스트 크기 */
+  font-weight: none; /* 텍스트 굵기 */
+  margin-top: 20px; /* 위쪽 여백 */
+}
+
+/* 상품 설명 텍스트 스타일 */
+.product-description {
+  font-size: 20px; /* 텍스트 크기 */
+  margin-top: 5px; /* 위쪽 여백 */
+  color: gray;
+}
+
+/* 상품 가격 텍스트 스타일 */
+.product-price {
+  font-size: 20px; /* 텍스트 크기 */
+  color: #000; /* 텍스트 색상 */
+  margin-top: 5px; /* 위쪽 여백 */
+}
