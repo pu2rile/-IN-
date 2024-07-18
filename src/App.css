@@ -25,22 +25,26 @@ header {
 
 /* 장바구니 아이콘 스타일 */
 .header .cart-icon {
-  width: 40px; /* 아이콘 너비 */
-  height: 40px; /* 아이콘 높이 */
+  width: 50px; /* 아이콘 너비 */
+  height: 50px; /* 아이콘 높이 */
   object-fit: contain; /* 이미지 크기를 유지하며 맞춤 */
 }
 
 /* 장바구니 개수 표시 스타일 */
 .header .cart-count {
   position: absolute; /* 절대 위치 */
-  top: 5px; /* 위쪽 위치 조정 */
-  right: -10px; /* 오른쪽 위치 조정 */
+  top: 28px; /* 위쪽 위치 조정 */
+  right: -5px; /* 오른쪽 위치 조정 */
+  width: 30px; /* 동그라미 너비 */
+  height: 30px; /* 동그라미 높이 */
   background-color: rgb(255, 255, 255); /* 배경색 */
   color: rgb(0, 0, 0); /* 텍스트 색상 */
   border-radius: 50%; /* 원형 테두리 */
-  padding: 4px 8px; /* 내부 여백 */
-  font-size: 11px; /* 폰트 크기 */
+  padding: 0; /* 내부 여백 제거 */
+  font-size: 15px; /* 폰트 크기 */
   font-weight: 900; /* 폰트 굵기 */
+  line-height: 30px; /* 텍스트 수직 가운데 정렬 */
+  text-align: center; /* 텍스트 수평 가운데 정렬 */
 }
 
 /* 콘텐츠 스타일 == 페이지 스타일 */

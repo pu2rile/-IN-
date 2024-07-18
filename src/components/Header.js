@@ -11,7 +11,7 @@ const Header = () => {
       {/* 장바구니 아이콘과 상품 개수 표시 */}
       <div className="cart-icon-container" style={{ cursor: 'default' }}>
         {/* 장바구니 아이콘 이미지 */}
-        <img src="/cart-icon.png" alt="Cart" className="cart-icon" />
+        <img src="/images/bag.png" alt="Cart" className="cart-icon" />
         {/* 장바구니에 담긴 상품 개수 */}
         <span className="cart-count">{cart.length}</span>
       </div>
