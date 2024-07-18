@@ -3,7 +3,6 @@ import { CartProvider } from './context/CartContext';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
-import ProductDetail from './components/ProductDetail';
 import './App.css';
 
 // App 컴포넌트는 애플리케이션의 루트 컴포넌트
@@ -18,8 +17,6 @@ const App = () => {
         <Routes>
           {/* Home 컴포넌트를 루트 경로에 매핑 */}
           <Route path="/" element={<Home />} />
-          {/* ProductDetail 컴포넌트를 /product/:id 경로에 매핑 */}
-          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </CartProvider>
