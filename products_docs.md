@@ -20,12 +20,11 @@ npm start
 
 ## 컴포넌트 구조
 
-주요 컴포넌트들의 구조와 역할
-
-예시:
-
-- `ProductList`: 상품 목록을 보여줍니다.
-- `ProductCard`: 각 상품의 정보를 보여줍니다.
+- `AddToCardButton` : 상품을 장바구니에 추가하는 버튼을 표시합니다.
+- `Header` : 페이지 상단의 헤더를 표시합니다.
+- `ProductIamge` : 상품 이미지를 표시합니다.
+- `ProductItem` : 단일 상품의 정보를 표시합니다.
+- `ProductList` : 상품 목록을 렌더링합니다.
 
 ## 테스트 방법
 
