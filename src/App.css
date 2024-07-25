@@ -6,12 +6,13 @@
 /* 헤더 스타일 */
 header {
   background-color: #000000; /* 헤더 배경색 */
-  min-height: 20vh; /* 헤더의 최소 높이 */
+  min-height: 15vh; /* 헤더의 최소 높이 */
   display: flex; /* Flexbox를 사용하여 요소 정렬 */
   align-items: center; /* 수직 가운데 정렬 */
-  justify-content: space-between; /* 좌우 끝에 요소 배치 */
-  padding: 0 20px; /* 좌우 여백 */
   color: white; /* 텍스트 색상 */
+  position: fixed; /* 스크롤해도 화면 상단에 고정 */
+  top: 0; /* 화면의 최상단에 위치 */
+  width: 100%; /* 전체 너비를 차지 */
 }
 
 /* 장바구니 아이콘 컨테이너 스타일 */
@@ -28,11 +29,13 @@ header {
   width: 50px; /* 아이콘 너비 */
   height: 50px; /* 아이콘 높이 */
   object-fit: contain; /* 이미지 크기를 유지하며 맞춤 */
+  margin-right: 50px;
 }
 
 /* 장바구니 개수 표시 스타일 */
 .header .cart-count {
   position: absolute; /* 절대 위치 */
+  margin-right: 50px;
   top: 28px; /* 위쪽 위치 조정 */
   right: -5px; /* 오른쪽 위치 조정 */
   width: 30px; /* 동그라미 너비 */
@@ -136,9 +139,10 @@ button:disabled {
   margin-left: 15px; /* 왼쪽 여백 */
 }
 
-/* 현재 상품 개수 텍스트 스타일 */
+/* 신발 상품 목록 텍스트 스타일 */
 .product-title {
   font-size: 50px; /* 텍스트 크기 조정 */
+  margin-top: 150px; /* 위쪽 여백 추가 */
   margin-bottom: 10px; /* 아래쪽 여백 추가 */
   margin-left: 45px; /* 왼쪽 여백 추가 */
 }
@@ -146,6 +150,6 @@ button:disabled {
 /* 현재 상품 개수 텍스트 스타일 */
 .product-count {
   font-size: 25px; /* 텍스트 크기 조정 */
-  margin-bottom: 10px; /* 아래쪽 여백 추가 */
+  margin-bottom: 40px; /* 아래쪽 여백 추가 */
   margin-left: 45px; /* 왼쪽 여백 추가 */
 }
