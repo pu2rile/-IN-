@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddToCartButton from './AddToCartButton';
 
 // ProductItem 컴포넌트는 단일 상품의 정보를 표시
 const ProductItem = ({ product }) => {
   // 가격을 30,000원 형식으로 포맷팅
   const formattedPrice = product.price.toLocaleString('ko-KR');
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    // 카드 관리 페이지로 이동
+    navigate('/card-management');
+  };
 
   return (
     <div className="product-item" style={{ cursor: 'pointer' }}>
@@ -20,7 +27,7 @@ const ProductItem = ({ product }) => {
         {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시 */}
         <AddToCartButton product={product} />
         {/* 구매 버튼 표시 */}
-        <button className="buy-now-button">구매</button>
+        <button className="buy-now-button" onClick={handleBuyNow}>구매</button>
       </div>
     </div>
   );

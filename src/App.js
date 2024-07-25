@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import { CartProvider } from './context/CartContext';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
+import CardManagement from './components/CardManagement';
 import './App.css';
 
 // App 컴포넌트는 애플리케이션의 루트 컴포넌트
 const App = () => {
+  const location = useLocation();
+  const isCardManagement = location.pathname === '/card-management';
+
   return (
     // CartProvider는 장바구니 상태를 관리하는 컨텍스트 프로바이더
     <CartProvider>
       {/* Header 컴포넌트는 페이지 상단의 헤더를 표시 */}
-      <Header />
+      {!isCardManagement && <Header />}
       <div className="content">
         {/* Routes는 애플리케이션의 라우트를 정의 */}
         <Routes>
           {/* Home 컴포넌트를 루트 경로에 매핑 */}
           <Route path="/" element={<Home />} />
+          {/* 카드 관리 경로 */}
+          <Route path="/card-management" element={<CardManagement />} />
         </Routes>
       </div>
     </CartProvider>
