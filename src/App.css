@@ -82,6 +82,15 @@ header {
   object-fit: cover; /* 이미지 크기 맞춤 */
 }
 
+/* 담기 및 구매 버튼 컨테이너 스타일 */
+.buttons-container {
+  display: flex; /* Flexbox로 버튼을 한 줄로 정렬 */
+  margin-left: -10px; /* 왼쪽 여백 */
+  justify-content: left; /* 가운데 정렬 */
+  gap: 0px; /* 버튼 사이 간격 */
+  padding: 10px; /* 내부 여백 */
+}
+
 /* 담기 버튼 스타일 */
 button {
   background-color: #000000; /* 버튼 배경색 */
@@ -115,6 +124,23 @@ button:disabled {
   background-color: #ccc; /* 회색 배경색 */
 }
 
+/* 구매 버튼 스타일 */
+.buy-now-button {
+  background-color: #ffef64; /* 버튼 배경색 */
+  color: black; /* 텍스트 색상 */
+  border: none; /* 테두리 없음 */
+  padding: 8px 10px; /* 내부 여백 */
+  cursor: pointer; /* 마우스 커서 포인터로 변경 */
+  border-radius: 50px; /* 모서리 둥글게 */
+  font-size: 14px; /* 글자 크기 */
+  font-weight: 900; /* 글자 굵기 조절 */
+  width: 60px; /* 너비 크기 설정 */
+}
+
+/* 구매 버튼 호버 스타일 */
+.buy-now-button:hover {
+  background-color: gold;
+}
 /* 상품 이름 텍스트 스타일 */
 .product-name {
   font-size: 23px; /* 텍스트 크기 */

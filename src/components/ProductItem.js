@@ -16,8 +16,12 @@ const ProductItem = ({ product }) => {
       <div className="product-description">{product.description}</div>
       {/* 포맷팅된 가격 표시 */}
       <div className="product-price">{formattedPrice}원</div>
-      {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시 */}
-      <AddToCartButton product={product} />
+      <div className="buttons-container">
+        {/* AddToCartButton 컴포넌트를 사용하여 장바구니에 담기 버튼 표시 */}
+        <AddToCartButton product={product} />
+        {/* 구매 버튼 표시 */}
+        <button className="buy-now-button">구매</button>
+      </div>
     </div>
   );
 };
