@@ -15,6 +15,7 @@ const App = () => {
     // CartProvider는 장바구니 상태를 관리하는 컨텍스트 프로바이더
     <CartProvider>
       {/* Header 컴포넌트는 페이지 상단의 헤더를 표시 */}
+      {/* CardManagement에서는 Header 숨기기 */}
       {!isCardManagement && <Header />}
       <div className="content">
         {/* Routes는 애플리케이션의 라우트를 정의 */}
