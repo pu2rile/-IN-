@@ -15,9 +15,30 @@ const CardForm = ({ onAddCard }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 필드 검증 로직 추가
+    // 필드 검증 로직
     if (!cardNumber || !expiry || !holderName || !cvc || !password) {
       alert('모든 필드를 입력해야 합니다.'); // 경고창 표시
+      return;
+    }
+    
+    // 유효성 검사
+    if (!expiry || !/^\d{2}\/\d{2}$/.test(expiry)) {
+      alert('유효한 만료일을 MM/YY 형식으로 입력하세요.');
+      return;
+    }
+
+    if (!holderName || holderName.length < 2) {
+      alert('유효한 카드 소유자 이름을 입력하세요.');
+      return;
+    }
+
+    if (!cvc || !/^\d{3,4}$/.test(cvc)) {
+      alert('유효한 보안 코드(CVC)를 입력하세요.');
+      return;
+    }
+
+    if (!password || password.length !== 4) {
+      alert('유효한 4자리 카드 비밀번호를 입력하세요.');
       return;
     }
 
@@ -25,7 +46,7 @@ const CardForm = ({ onAddCard }) => {
     const card = { cardNumber, expiry, holderName, cvc, password };
     onAddCard(card);
 
-    // 폼 리셋 (필요한 경우)
+    // 폼 리셋
     setCardNumber('');
     setExpiry('');
     setHolderName('');
