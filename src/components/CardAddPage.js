@@ -12,6 +12,9 @@ const CardAddPage = () => {
   return (
     <div className="card-add-page">
       <div className="card-header">
+        <button className="back-button" onClick={() => navigate('/card-management')}>
+          <img src="/images/back-icon.png" alt="뒤로가기" className="back-icon" /> {/* 아이콘 이미지 */}
+        </button>
         <h2>카드 추가</h2>
         <button className="close-button" onClick={() => navigate('/')}>×</button>
       </div>
