@@ -14,12 +14,16 @@ const CardHolderNameInput = ({ value, onChange }) => {
   };
 
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={handleChange}
-      placeholder="카드에 표시된 이름과 동일하게 입력하세요."
-    />
+    <div className="card-holder-input-container">
+      <input
+        type="text"
+        value={value}
+        onChange={handleChange}
+        placeholder="카드에 표시된 이름과 동일하게 입력하세요."
+        className="card-holder-input"
+      />
+      <div className="character-count">{value.length} / 30</div>
+    </div>
   );
 };
 

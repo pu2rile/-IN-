@@ -305,6 +305,18 @@ button:disabled {
   outline: none;
 }
 
+/* 카드 소유자 이름 타이핑 수 카운팅 */
+.character-count {
+  position: absolute;
+  margin-right: -30px;
+  right: 0;
+  top: 15%;
+  font-weight: bold;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #737373;
+}
+
 .register-card-button {
   background-color: #000000; /* 버튼 배경색 */
   color: white; /* 텍스트 색상 */
