@@ -13,7 +13,7 @@ const CardAddPage = () => {
     <div className="card-add-page">
       <div className="card-header">
         <h2>카드 추가</h2>
-        <button className="close-button" onClick={() => navigate('/card-management')}>×</button>
+        <button className="close-button" onClick={() => navigate('/')}>×</button>
       </div>
       <CardForm onAddCard={handleAddCard} />
     </div>
