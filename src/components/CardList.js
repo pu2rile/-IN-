@@ -6,7 +6,10 @@ const CardList = ({ cards }) => {
   return (
     <div className="card-list">
       {cards.length === 0 ? (
-        <AddCardButton />
+        <div className="no-cards-message">
+          <p>등록된 카드가 없습니다.</p>
+          <AddCardButton />
+        </div>
       ) : (
         cards.map((card, index) => (
           <RegisteredCard key={index} card={card} />
