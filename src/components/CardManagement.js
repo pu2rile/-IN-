@@ -14,11 +14,17 @@ const CardManagement = () => {
 
   return (
     <div className="card-management">
-      <h2>보유카드</h2>
+      <div className="card-header">
+        <h2>보유카드</h2>
+        <button className="close-button" onClick={() => {/* 닫기 버튼 동작 */}}>×</button>
+      </div>
       {cards.length === 0 ? (
-        <AddCardButton onClick={() => setAddingCard(true)} />
+        <div className="no-cards">
+          <p>새로운 카드를 등록해주세요.</p>
+          <AddCardButton onClick={() => setAddingCard(true)} />
+        </div>
       ) : (
-        <div>
+        <div className="cards-list">
           {cards.map((card, index) => <RegisteredCard key={index} card={card} />)}
           <AddCardButton onClick={() => setAddingCard(true)} />
         </div>

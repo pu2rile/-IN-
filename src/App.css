@@ -179,3 +179,73 @@ button:disabled {
   margin-bottom: 40px; /* 아래쪽 여백 추가 */
   margin-left: 45px; /* 왼쪽 여백 추가 */
 }
+
+/* 카드 관리 페이지 스타일 */
+.card-management {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 카드 관리 페이지 헤더 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-button:hover {
+  background-color: rgb(224, 224, 223);
+}
+
+/* 새로운 카드 등록 */
+.no-cards {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border: 1px dashed #888;
+  color: #888;
+  font-size: 16px;
+}
+
+.add-card-button:hover {
+  background-color: #d0d0d0;
+}
+
+.add-card-button:before {
+  content: "+";
+  font-size: 24px;
+  margin-right: 5px;
+}
