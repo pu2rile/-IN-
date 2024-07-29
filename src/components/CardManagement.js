@@ -11,11 +11,15 @@ const CardManagement = () => {
     navigate('/add-card');
   };
 
+  const handleClose = () => {
+    navigate('/'); // 홈 페이지로 이동
+  };
+
   return (
     <div className="card-management">
       <div className="card-header">
         <h2>보유카드</h2>
-        <button className="close-button" onClick={() => {/* 닫기 버튼 동작 */}}>×</button>
+        <button className="close-button" onClick={handleClose}>×</button>
       </div>
       {cards.length === 0 ? (
         <div className="no-cards">
