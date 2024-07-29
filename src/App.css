@@ -190,6 +190,7 @@ button:disabled {
 /* 카드 관리 페이지 헤더 */
 .card-header {
   margin-top: -20px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
