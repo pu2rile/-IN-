@@ -6,8 +6,6 @@ const CardAddPage = () => {
   const navigate = useNavigate();
 
   const handleAddCard = (card) => {
-    console.log('카드 정보:', card);
-    // 카드 정보를 서버에 전송하거나 다른 처리를 수행합니다.
     navigate('/card-management'); // 카드 등록 후 카드 관리 페이지로 이동
   };
 

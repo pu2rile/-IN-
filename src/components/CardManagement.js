@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddCardButton from './AddCardButton'; // 카드 추가 버튼 컴포넌트
 import RegisteredCard from './RegisteredCard'; // 등록된 카드 컴포넌트
 
 const CardManagement = () => {
-  const [cards, setCards] = useState([]);
-  const [addingCard, setAddingCard] = useState(false);
+  const [cards] = useState([]); // 'setCards' 제거, 'cards'만 사용
+  const navigate = useNavigate();
 
-  const handleAddCard = (card) => {
-    setCards([...cards, card]);
-    setAddingCard(false);
+  const handleAddCard = () => {
+    navigate('/add-card');
   };
 
   return (
@@ -20,12 +20,12 @@ const CardManagement = () => {
       {cards.length === 0 ? (
         <div className="no-cards">
           <p>새로운 카드를 등록해주세요.</p>
-          <AddCardButton onClick={() => setAddingCard(true)} />
+          <AddCardButton onClick={handleAddCard} />
         </div>
       ) : (
         <div className="cards-list">
           {cards.map((card, index) => <RegisteredCard key={index} card={card} />)}
-          <AddCardButton onClick={() => setAddingCard(true)} />
+          <AddCardButton onClick={handleAddCard} />
         </div>
       )}
     </div>
