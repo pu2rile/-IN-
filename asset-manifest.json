@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Intern-IN-Meta/static/css/main.5161e1c9.css",
+    "main.js": "/Intern-IN-Meta/static/js/main.8b0855c6.js",
+    "index.html": "/Intern-IN-Meta/index.html",
+    "main.5161e1c9.css.map": "/Intern-IN-Meta/static/css/main.5161e1c9.css.map",
+    "main.8b0855c6.js.map": "/Intern-IN-Meta/static/js/main.8b0855c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5161e1c9.css",
+    "static/js/main.8b0855c6.js"
+  ]
+}
