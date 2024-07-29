@@ -67,7 +67,7 @@ const CardForm = ({ onAddCard }) => {
           className="password-input"
         />
       </div>
-      <button className='register-card-button'>카드 등록</button>
+      <button className="register-card-button">카드 등록</button>
     </form>
   );
 };
