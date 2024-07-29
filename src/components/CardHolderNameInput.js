@@ -2,7 +2,12 @@ import React from 'react';
 
 const CardHolderNameInput = ({ value, onChange }) => {
   const handleChange = (e) => {
-    const inputValue = e.target.value;
+    let inputValue = e.target.value;
+    
+    // 영어 알파벳과 공백만 허용
+    inputValue = inputValue.replace(/[^a-zA-Z\s]/g, '');
+
+    // 최대 길이 30자 제한
     if (inputValue.length <= 30) {
       onChange(inputValue);
     }
