@@ -12,8 +12,8 @@ const CardAddPage = () => {
   return (
     <div className="card-add-page">
       <div className="card-header">
-        <button className="close-button" onClick={() => navigate('/card-management')}>×</button>
         <h2>카드 추가</h2>
+        <button className="close-button" onClick={() => navigate('/card-management')}>×</button>
       </div>
       <CardForm onAddCard={handleAddCard} />
     </div>

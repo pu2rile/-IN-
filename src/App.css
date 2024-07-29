@@ -235,3 +235,17 @@ button:disabled {
 .add-card-button:hover {
   background-color: #ccc;
 }
+
+/* 카드 추가 페이지 스타일 */
+.card-add-page {
+  margin: 0 auto;
+  padding: 10px 40px;
+  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
+}
+
+/* 카드 추가 페이지 헤더 */
+.card-add-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
