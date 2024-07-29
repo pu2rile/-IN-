@@ -16,7 +16,7 @@ const ProductItem = ({ product }) => {
   return (
     <div className="product-item" style={{ cursor: 'pointer' }}>
       {/* 상품 이미지 표시 */}
-      <img src={`/images/${product.image}`} alt={product.name} className="product-image" />
+      <img src={`${process.env.PUBLIC_URL}/images/${product.image}`} alt={product.name} className="product-image" />
       {/* 상품 이름 표시 */}
       <div className="product-name">{product.name}</div>
       {/* 상품 설명 표시 */}

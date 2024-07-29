@@ -14,7 +14,7 @@ const CardAddPage = ({ addCard }) => {
     <div className="card-add-page">
       <div className="card-add-header">
         <button className="back-button" onClick={() => navigate('/card-management')}>
-          <img src="/images/back-icon.png" alt="뒤로가기" className="back-icon" />
+        <img src={`${process.env.PUBLIC_URL}/images/back-icon.png`} alt="뒤로가기" className="back-icon" />
         </button>
         <h2>카드 추가</h2>
         <button className="close-button" onClick={() => navigate('/')}>×</button>
