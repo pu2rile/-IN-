@@ -14,8 +14,23 @@ const CardForm = ({ onAddCard }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // 필드 검증 로직 추가
+    if (!cardNumber || !expiry || !holderName || !cvc || !password) {
+      alert('모든 필드를 입력해야 합니다.'); // 경고창 표시
+      return;
+    }
+
+    // 카드 등록 처리
     const card = { cardNumber, expiry, holderName, cvc, password };
     onAddCard(card);
+
+    // 폼 리셋 (필요한 경우)
+    setCardNumber('');
+    setExpiry('');
+    setHolderName('');
+    setCVC('');
+    setPassword('');
   };
 
   return (
@@ -55,7 +70,7 @@ const CardForm = ({ onAddCard }) => {
           onChange={setPassword}
         />
       </div>
-      <button className="register-card-button">카드 등록</button>
+      <button type="submit" className="register-card-button">카드 등록</button>
     </form>
   );
 };
