@@ -269,31 +269,36 @@ button:disabled {
   margin-top: 10px;
 }
 
-form {
+.card-form {
   display: flex;
   flex-direction: column;
+  gap: 13px;
 }
 
-form label {
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: block;
   margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+  color: #525252;
 }
 
-form input, form textarea {
-  padding: 10px;
-  margin-bottom: 30px;
+/* 입력 필드의 기본 스타일 */
+.card-form input {
+  width: 100%;
+  padding: 20px;
   border: none;
   border-radius: 5px;
   background-color: #ecebf1;
-  font-size: 20px;
+  font-size: 16px;
+  color: #333;
 }
 
-form input::placeholder, form textarea::placeholder {
-  color: #bbb;
-}
-
-form input:focus, form textarea:focus {
+.card-form input:focus {
+  border-color: black;
   outline: none;
 }
 
