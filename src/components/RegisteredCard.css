@@ -1,6 +1,5 @@
 .registered-card {
-  margin-bottom: 50px;
-  width: 285px;
+  width: 300px;
   height: 170px;
   border-radius: 15px;
   background-color: #333333;
@@ -8,46 +7,56 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* 요소를 아래로 정렬 */
+  justify-content: space-between; /* 카드 내용을 아래로 정렬 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   position: relative;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 카드 내용 전체를 하단에 정렬 */
+  flex-grow: 1; /* 카드 내용 영역이 가능한 공간을 채우도록 함 */
 }
 
 .card-chip {
+  margin-top: 50px;
   width: 55px;
   height: 35px;
   background-color: #cbba64;
   border-radius: 5px;
   position: absolute;
-  top: 90px;
-  left: 45px;
+  top: 20px;
+  left: 20px;
 }
 
 .card-number {
-  margin-left: 25px;
-  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 3px;
-  margin-bottom: 10px; /* 요소와 요소 사이에 여백 추가 */
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 
 .card-holder-expiry {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
 .card-holder {
-  margin-left: 25px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .expiry-date {
-  margin-right: 25px;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 2px;
   font-weight: 600;
+}
+
 .payment-button {
   margin-top: -5px;
   margin-bottom: 50px;
