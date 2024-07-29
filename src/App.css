@@ -227,25 +227,13 @@ button:disabled {
 }
 
 .add-card-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #e0e0e0;
+  background: none;
+  border: none;
+  font-size: 24px;
   cursor: pointer;
-  border: 1px dashed #888;
   color: #888;
-  font-size: 16px;
 }
 
 .add-card-button:hover {
-  background-color: #d0d0d0;
-}
-
-.add-card-button:before {
-  content: "+";
-  font-size: 24px;
-  margin-right: 5px;
+  background-color: #ccc;
 }
