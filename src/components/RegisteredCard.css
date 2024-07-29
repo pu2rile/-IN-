@@ -48,4 +48,19 @@
   font-size: 20px;
   letter-spacing: 2px;
   font-weight: 600;
+.payment-button {
+  margin-top: -5px;
+  margin-bottom: 50px;
+  background-color: #ffef64;
+  color: black;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 320px;
+  height: 45px;
+}
+
+.payment-button:hover {
+  background-color: #fcf6c6;
 }
