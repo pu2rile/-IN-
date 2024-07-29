@@ -305,26 +305,6 @@ button:disabled {
   outline: none;
 }
 
-.card-form .card-number-input {
-  width: 100%; /* 카드 번호 필드의 전체 너비 */
-}
-
-.card-form .expiry-input {
-  width: 30%; /* 만료일 필드의 전체 너비 */
-}
-
-.card-form .holder-name-input {
-  width: 100%; /* 카드 소유자 이름 필드의 전체 너비 */
-}
-
-.card-form .cvc-input {
-  width: 20%; /* 보안 코드 필드의 너비를 50%로 설정 */
-}
-
-.card-form .password-input {
-  width: 40%; /* 카드 비밀번호 필드의 너비를 50%로 설정 */
-}
-
 .register-card-button {
   background-color: #000000; /* 버튼 배경색 */
   color: white; /* 텍스트 색상 */

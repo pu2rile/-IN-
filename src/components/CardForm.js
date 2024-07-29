@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import CardNumberInput from './CardNumberInput';
+import CardExpiryInput from './CardExpiryInput';
+import CardHolderNameInput from './CardHolderNameInput';
+import CardCVCInput from './CardCVCInput';
+import CardPasswordInput from './CardPasswordInput';
 
 const CardForm = ({ onAddCard }) => {
   const [cardNumber, setCardNumber] = useState('');
@@ -17,54 +22,37 @@ const CardForm = ({ onAddCard }) => {
     <form onSubmit={handleSubmit} className="card-form">
       <div className="form-group">
         <label className="input-label" htmlFor="card-number">카드 번호</label>
-        <input
-          type="text"
-          id="card-number"
+        <CardNumberInput
           value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          className="card-number-input"
+          onChange={setCardNumber}
         />
       </div>
       <div className="form-group">
         <label className="input-label" htmlFor="expiry">만료일</label>
-        <input
-          type="text"
-          id="expiry"
+        <CardExpiryInput
           value={expiry}
-          onChange={(e) => setExpiry(e.target.value)}
-          className="expiry-input"
-          placeholder="MM/YY"
+          onChange={setExpiry}
         />
       </div>
       <div className="form-group">
         <label className="input-label" htmlFor="holder-name">카드 소유자 이름</label>
-        <input
-          type="text"
-          id="holder-name"
+        <CardHolderNameInput
           value={holderName}
-          onChange={(e) => setHolderName(e.target.value)}
-          className="holder-name-input"
-          placeholder="카드에 표시된 이름과 동일하게 입력하세요."
+          onChange={setHolderName}
         />
       </div>
       <div className="form-group">
         <label className="input-label" htmlFor="cvc">보안 코드(CVC/CBB)</label>
-        <input
-          type="password"
-          id="cvc"
+        <CardCVCInput
           value={cvc}
-          onChange={(e) => setCVC(e.target.value)}
-          className="cvc-input"
+          onChange={setCVC}
         />
       </div>
       <div className="form-group">
         <label className="input-label" htmlFor="password">카드 비밀번호</label>
-        <input
-          type="password"
-          id="password"
+        <CardPasswordInput
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="password-input"
+          onChange={setPassword}
         />
       </div>
       <button className="register-card-button">카드 등록</button>

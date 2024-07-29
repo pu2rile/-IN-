@@ -34,7 +34,6 @@ const CardNumberInput = ({ value, onChange }) => {
       type="text"
       value={value}
       onChange={handleChange}
-      placeholder="카드 번호"
       maxLength="19" // 입력 필드에 대한 최대 길이 제한
     />
   );

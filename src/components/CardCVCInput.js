@@ -13,7 +13,6 @@ const CardCVCInput = ({ value, onChange }) => {
       type="password" // 비밀번호 입력 필드로 설정하여 자동 마스킹 처리
       value={value}
       onChange={handleChange}
-      placeholder="CVC"
       maxLength="3" // 최대 입력 길이 3자리
     />
   );

@@ -13,7 +13,6 @@ const CardPasswordInput = ({ value, onChange }) => {
       type="password"
       value={value}
       onChange={handleChange}
-      placeholder="카드 비밀번호"
     />
   );
 };
