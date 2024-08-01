@@ -1,108 +1,128 @@
-/* 실시간 카드 미리보기 스타일 */
+/* 전체 페이지 스타일 */
+.card-add-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 카드 미리보기 섹션 스타일 */
+.preview-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* 미리보기와 폼 사이 간격 */
+}
+
 .live-preview-card {
-    margin-left: 300px;
-    width: 300px;
-    height: 170px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    position: relative;
-    margin-bottom: 20px;
-  }
+  width: 300px;
+  height: 170px;
+  border-radius: 15px;
+  background-color: #333333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 카드 입력 폼 섹션 스타일 */
+.form-section {
+  width: 100%;
+  max-width: 400px; /* 폼의 최대 너비 설정 */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.card-chip {
+  width: 55px;
+  height: 35px;
+  background-color: #cbba64;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.card-number {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.card-holder-expiry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-holder {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.expiry-date {
+  font-size: 17px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* 카드 헤더 스타일 */
+.card-add-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px; /* 좌우 패딩 추가 */
+}
+
+.back-button, .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card-form .form-group {
+  margin-bottom: 20px;
+}
+
+.card-form .input-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-form .register-card-button {
+  background-color: #ffef64;
+  color: black;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-form .register-card-button:hover {
+  background-color: #fcf6c6;
+}
 
 /* 추가된 카드 스타일 */
 .registered-card {
-    width: 300px;
-    height: 170px;
-    border-radius: 15px;
-    background-color: #333333;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    position: relative;
-    margin-bottom: 50px;
-  }
-  
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-grow: 1;
-  }
-  
-  .card-chip {
-    width: 55px;
-    height: 35px;
-    background-color: #cbba64;
-    border-radius: 5px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .card-number {
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
-  
-  .card-holder-expiry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .card-holder {
-    font-weight: 600;
-    font-size: 17px;
-  }
-  
-  .expiry-date {
-    font-size: 17px;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
-  
-  .card-add-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .back-button, .close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .card-form .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .card-form .input-label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .card-form .register-card-button {
-    background-color: #ffef64;
-    color: black;
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .card-form .register-card-button:hover {
-    background-color: #fcf6c6;
-  }
+  width: 300px;
+  height: 170px;
+  border-radius: 15px;
+  background-color: #444444; /* live-preview-card와 구분되는 색상 */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-top: 20px; /* 다른 요소와의 간격 */
+}

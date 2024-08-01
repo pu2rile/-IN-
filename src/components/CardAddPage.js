@@ -15,7 +15,7 @@ const CardAddPage = ({ addCard }) => {
 
   const handleAddCard = (newCard) => {
     addCard(newCard);
-    navigate('/card-management'); // 카드 등록 후 카드 관리 페이지로 이동
+    navigate('/card-management');
   };
 
   return (
@@ -28,25 +28,30 @@ const CardAddPage = ({ addCard }) => {
         <button className="close-button" onClick={() => navigate('/')}>×</button>
       </div>
 
-      {/* 실시간 카드 미리보기 UI */}
-      <div className="live-preview-card">
-        <div className="card-chip"></div>
-        <div className="card-content">
-          <div className="card-number">
-            {cardData.cardNumber || ''}
-          </div>
-          <div className="card-holder-expiry">
-            <div className="card-holder">
-              {cardData.holderName || 'NAME'}
+      {/* 카드 미리보기 섹션 */}
+      <div className="preview-section">
+        <div className="live-preview-card">
+          <div className="card-chip"></div>
+          <div className="card-content">
+            <div className="card-number">
+              {cardData.cardNumber || ''}
             </div>
-            <div className="expiry-date">
-              {cardData.expiry || 'MM/YY'}
+            <div className="card-holder-expiry">
+              <div className="card-holder">
+                {cardData.holderName || 'NAME'}
+              </div>
+              <div className="expiry-date">
+                {cardData.expiry || 'MM/YY'}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <CardForm onAddCard={handleAddCard} cardData={cardData} setCardData={setCardData} />
+      {/* 카드 입력 폼 섹션 */}
+      <div className="form-section">
+        <CardForm onAddCard={handleAddCard} cardData={cardData} setCardData={setCardData} />
+      </div>
     </div>
   );
 };
