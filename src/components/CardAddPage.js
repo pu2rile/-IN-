@@ -31,7 +31,7 @@ const CardAddPage = ({ addCard }) => {
       {/* 카드 미리보기 섹션 */}
       <div className="preview-section">
         <div className="live-preview-card">
-          <div className="card-chip"></div>
+          <div className="live-preview-card-chip"></div>
           <div className="card-content">
             <div className="card-number">
               {cardData.cardNumber || ''}
