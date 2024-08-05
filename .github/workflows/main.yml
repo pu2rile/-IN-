@@ -13,10 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3  # 레포지토리 코드를 다운 받고, 작업 환경으로 가져오는 것
 
-    - name: Use Node.js 18.20.4
+    - name: Use Node.js 20
       uses: actions/setup-node@v3  # Node.js 환경 설정하는 것
       with:
-        node-version: '18.20.4'
+        node-version: '20'
         cache: 'npm'
 
     - name: Install dependencies
