@@ -1,0 +1,29 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 푸시될 때 실행
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 레포지토리 코드를 다운 받고, 작업 환경으로 가져오는 것
+
+    - name: Use Node.js 18.20.4
+      uses: actions/setup-node@v2  # Node.js 환경 설정하는 것
+      with:
+        node-version: '18.20.4'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Deploy the project
+      run: npm run deploy  # 배포 스크립트 실행
