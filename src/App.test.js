@@ -1,10 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { act } from 'react'; // React에서 act 가져오기
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 test('renders learn react link', () => {
-  render(<App />);
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
