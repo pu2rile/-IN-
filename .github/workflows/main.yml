@@ -28,5 +28,15 @@ jobs:
     - name: Run tests
       run: npm test
 
+    - name: Build project
+      run: npm run build
+
+    - name: Configure Git
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
     - name: Deploy the project
-      run: npm run deploy  # 배포 스크립트 실행
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npm run deploy
