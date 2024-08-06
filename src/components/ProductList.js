@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductItem from './ProductItem';
+import ProductItem from './ProductCard';
 
 // 하드코딩된 상품 데이터 배열
 const products = [
