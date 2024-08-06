@@ -21,19 +21,21 @@ const ShoppingCart = () => {
       {cart.length === 0 ? (
         <p>장바구니에 상품이 없습니다.</p>
       ) : (
-        cart.map(item => (
-          <div key={item.id}>
-            <p>{item.name}</p>
-            <p>{item.price.toLocaleString()}원</p>
+        <>
+          {cart.map(item => (
+            <div key={item.id}>
+              <p>{item.name}</p>
+              <p>{item.price.toLocaleString()}원</p>
+            </div>
+          ))}
+          <div>
+            <p>상품 금액: {totalItemPrice.toLocaleString()}원</p>
+            <p>배송비: {shippingCost.toLocaleString()}원</p>
+            <p>총 금액: {totalPrice.toLocaleString()}원</p>
           </div>
-        ))
+          <button onClick={() => alert('결제 모듈 연동 예정')}>결제하기</button>
+        </>
       )}
-      <div>
-        <p>상품 금액: {totalItemPrice.toLocaleString()}원</p>
-        <p>배송비: {shippingCost.toLocaleString()}원</p>
-        <p>총 금액: {totalPrice.toLocaleString()}원</p>
-      </div>
-      <button onClick={() => alert('결제 모듈 연동 예정')}>결제하기</button>
     </div>
   );
 };
