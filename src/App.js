@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart';
 import CardManagement from './components/CardManagement';
 import CardAddPage from './components/CardAddPage';
 import './App.css';
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/card-management" element={<CardManagement cards={cards} />} />
           <Route path="/add-card" element={<CardAddPage addCard={addCard} />} />
+          <Route path="/shopping-cart" element={<ShoppingCart />} /> {/* ShoppingCart 라우트 추가 */}
         </Routes>
       </div>
     </CartProvider>
