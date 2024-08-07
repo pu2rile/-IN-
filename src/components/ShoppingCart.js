@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './ShoppingCart.css';
@@ -6,13 +6,24 @@ import './ShoppingCart.css';
 const ShoppingCart = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
+  const [quantities, setQuantities] = useState(cart.map(item => ({ id: item.id, quantity: 1 })));
 
-  const totalItemPrice = cart.reduce((total, item) => total + item.price, 0);
+  const totalItemPrice = cart.reduce((total, item, index) => total + item.price * quantities[index].quantity, 0);
   const shippingCost = totalItemPrice >= 100000 ? 0 : 3000;
   const totalPrice = totalItemPrice + shippingCost;
 
   const handleBackButton = () => {
     navigate('/');
+  };
+
+  const handleQuantityChange = (id, delta) => {
+    setQuantities(prevQuantities =>
+      prevQuantities.map(q =>
+        q.id === id
+          ? { ...q, quantity: Math.max(1, q.quantity + delta) } // 최소 수량을 1로 유지
+          : q
+      )
+    );
   };
 
   return (
@@ -26,9 +37,9 @@ const ShoppingCart = () => {
           <p>장바구니에 상품이 없습니다.</p>
         ) : (
           <>
-            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨 있습니다.</p>
+            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨있습니다.</p>
             <div className="cart-items">
-              {cart.map(item => (
+              {cart.map((item, index) => (
                 <div className="cart-item" key={item.id}>
                   <img src={`${process.env.PUBLIC_URL}/images/${item.image}`} alt={item.name} />
                   <div className="cart-item-info">
@@ -37,9 +48,9 @@ const ShoppingCart = () => {
                       {item.price.toLocaleString()}원
                     </div>
                     <div className="cart-item-quantity">
-                      <button>-</button>
-                      <span>1</span>
-                      <button>+</button>
+                      <button onClick={() => handleQuantityChange(item.id, -1)}>-</button>
+                      <span>{quantities.find(q => q.id === item.id).quantity}</span>
+                      <button onClick={() => handleQuantityChange(item.id, 1)}>+</button>
                     </div>
                   </div>
                 </div>
