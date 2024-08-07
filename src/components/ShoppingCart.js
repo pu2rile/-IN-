@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './ShoppingCart.css';
@@ -7,6 +7,10 @@ const ShoppingCart = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
   const [quantities, setQuantities] = useState(cart.map(item => ({ id: item.id, quantity: 1 })));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const totalItemPrice = cart.reduce((total, item, index) => total + item.price * quantities[index].quantity, 0);
   const shippingCost = totalItemPrice >= 100000 ? 0 : 3000;
