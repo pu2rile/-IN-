@@ -20,6 +20,10 @@ const ShoppingCart = () => {
     navigate('/');
   };
 
+  const handleCheckout = () => {
+    navigate('/card-management');
+  };
+
   const handleQuantityChange = (id, delta) => {
     setQuantities(prevQuantities =>
       prevQuantities.map(q =>
@@ -43,7 +47,7 @@ const ShoppingCart = () => {
           <p>장바구니에 상품이 없습니다.</p>
         ) : (
           <>
-            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨있습니다.</p>
+            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨 있습니다.</p>
             <div className="cart-items">
               {cart.map((item, index) => (
                 <div className="cart-item" key={item.id}>
@@ -68,7 +72,7 @@ const ShoppingCart = () => {
               <div className="divider"></div>
               <p className="total-price">총 금액 <span className="price-value">{totalPrice.toLocaleString()}원</span></p>
             </div>
-            <button className="checkout-button">결제하기</button>
+            <button className="checkout-button" onClick={handleCheckout}>결제하기</button>
           </>
         )}
       </div>
