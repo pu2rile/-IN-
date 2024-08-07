@@ -33,24 +33,23 @@ const ShoppingCart = () => {
                   <img src={`${process.env.PUBLIC_URL}/images/${item.image}`} alt={item.name} />
                   <div className="cart-item-info">
                     <h2>{item.name}</h2>
-                    <p></p>
+                    <div className="cart-item-price">
+                      {item.price.toLocaleString()}원
+                    </div>
                     <div className="cart-item-quantity">
                       <button>-</button>
                       <span>1</span>
                       <button>+</button>
                     </div>
                   </div>
-                  <div className="cart-item-price">
-                    {item.price.toLocaleString()}원
-                  </div>
                 </div>
               ))}
             </div>
             <div className="cart-summary">
-              <p className="item-price">상품 금액 <span>{totalItemPrice.toLocaleString()}원</span></p>
-              <p className="shipping-cost">배송비 <span>{shippingCost.toLocaleString()}원</span></p>
+              <p className="item-price">상품 금액 <span className="price-value">{totalItemPrice.toLocaleString()}원</span></p>
+              <p className="shipping-cost">배송비 <span className="price-value">{shippingCost.toLocaleString()}원</span></p>
               <div className="divider"></div>
-              <p className="total-price">총 금액 <span>{totalPrice.toLocaleString()}원</span></p>
+              <p className="total-price">총 금액 <span className="price-value">{totalPrice.toLocaleString()}원</span></p>
             </div>
             <button className="checkout-button">결제하기</button>
           </>
