@@ -13,6 +13,7 @@ const App = () => {
   const location = useLocation();
   const isCardManagement = location.pathname === '/card-management';
   const isCardAddPage = location.pathname === '/add-card';
+  const isShoppingCart = location.pathname === '/shopping-cart';
 
   const addCard = (newCard) => {
     setCards((prevCards) => [...prevCards, newCard]);
@@ -20,7 +21,7 @@ const App = () => {
 
   return (
     <CartProvider>
-      {!(isCardManagement || isCardAddPage) && <Header />}
+      {!(isCardManagement || isCardAddPage || isShoppingCart) && <Header />}
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
