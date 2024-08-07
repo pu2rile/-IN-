@@ -26,7 +26,7 @@ const ShoppingCart = () => {
           <p>장바구니에 상품이 없습니다.</p>
         ) : (
           <>
-            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨있습니다.</p>
+            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨 있습니다.</p>
             <div className="cart-items">
               {cart.map(item => (
                 <div className="cart-item" key={item.id}>
