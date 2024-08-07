@@ -25,12 +25,18 @@
 }
   
 /* 헤더 안의 버튼 스타일 설정 */
-.shopping-cart-header button {
+.shopping-cart-header .back-button {
     background: none; /* 버튼 배경 제거 */
     border: none; /* 버튼 테두리 제거 */
-    color: #fff; /* 버튼 텍스트 색상 설정 */
-    font-size: 24px; /* 버튼 텍스트 크기 설정 */
     cursor: pointer; /* 버튼 커서 설정 */
+    padding: 0; /* 패딩 제거 */
+}
+
+.shopping-cart-header .back-icon {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 50px; /* 아이콘 너비 설정 */
+    height: 50px; /* 아이콘 높이 설정 */
 }
   
 /* 콘텐츠 컨테이너 스타일 설정 */

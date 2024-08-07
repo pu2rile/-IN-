@@ -29,7 +29,9 @@ const ShoppingCart = () => {
   return (
     <div className="shopping-cart-page">
       <div className="shopping-cart-header">
-        <button className="back-button" onClick={handleBackButton}>←</button>
+        <button className="back-button" onClick={handleBackButton}>
+          <img src={`${process.env.PUBLIC_URL}/images/cart-back-icon.png`} alt="뒤로가기" className="back-icon" />
+        </button>
       </div>
       <div className="cart-content">
         <h1 className="cart-title">장바구니</h1>
