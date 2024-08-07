@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import './ShoppingCart.css';
 
 const ShoppingCart = () => {
   const navigate = useNavigate();
@@ -15,27 +16,46 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleBackButton}>뒤로가기</button>
-      <h1>장바구니</h1>
-      {cart.length === 0 ? (
-        <p>장바구니에 상품이 없습니다.</p>
-      ) : (
-        <>
-          {cart.map(item => (
-            <div key={item.id}>
-              <p>{item.name}</p>
-              <p>{item.price.toLocaleString()}원</p>
+    <div className="shopping-cart-page">
+      <div className="shopping-cart-header">
+        <button className="back-button" onClick={handleBackButton}>←</button>
+      </div>
+      <div className="cart-content">
+        <h1 className="cart-title">장바구니</h1>
+        {cart.length === 0 ? (
+          <p>장바구니에 상품이 없습니다.</p>
+        ) : (
+          <>
+            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨있습니다.</p>
+            <div className="cart-items">
+              {cart.map(item => (
+                <div className="cart-item" key={item.id}>
+                  <img src={`${process.env.PUBLIC_URL}/images/${item.image}`} alt={item.name} />
+                  <div className="cart-item-info">
+                    <h2>{item.name}</h2>
+                    <p></p>
+                    <div className="cart-item-quantity">
+                      <button>-</button>
+                      <span>1</span>
+                      <button>+</button>
+                    </div>
+                  </div>
+                  <div className="cart-item-price">
+                    {item.price.toLocaleString()}원
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-          <div>
-            <p>상품 금액: {totalItemPrice.toLocaleString()}원</p>
-            <p>배송비: {shippingCost.toLocaleString()}원</p>
-            <p>총 금액: {totalPrice.toLocaleString()}원</p>
-          </div>
-          <button onClick={() => alert('결제 모듈 연동 예정')}>결제하기</button>
-        </>
-      )}
+            <div className="cart-summary">
+              <p className="item-price">상품 금액 <span>{totalItemPrice.toLocaleString()}원</span></p>
+              <p className="shipping-cost">배송비 <span>{shippingCost.toLocaleString()}원</span></p>
+              <div className="divider"></div>
+              <p className="total-price">총 금액 <span>{totalPrice.toLocaleString()}원</span></p>
+            </div>
+            <button className="checkout-button">결제하기</button>
+          </>
+        )}
+      </div>
     </div>
   );
 };
