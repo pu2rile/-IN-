@@ -18,7 +18,6 @@ const CardManagement = ({ cards, isOpen, onClose, openCardAddPage }) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="card-management">
         <div className="card-header">
-          <h2>보유카드</h2>
           <button className="close-button" onClick={onClose}>
             <img src={`${process.env.PUBLIC_URL}/images/close-icon.png`} alt="닫기" className="close-icon" />
           </button>
