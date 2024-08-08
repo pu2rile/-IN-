@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   const [quantities, setQuantities] = useState(cart.map(item => ({ id: item.id, quantity: 1 })));
   const [isCardManagementOpen, setIsCardManagementOpen] = useState(false);
   const [isCardAddOpen, setIsCardAddOpen] = useState(false);
-  const [cards, setCards] = useState([]); // 카드 상태 추가
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +33,7 @@ const ShoppingCart = () => {
     setQuantities(prevQuantities =>
       prevQuantities.map(q =>
         q.id === id
-          ? { ...q, quantity: Math.max(1, q.quantity + delta) } // 최소 수량을 1로 유지
+          ? { ...q, quantity: Math.max(1, q.quantity + delta) }
           : q
       )
     );
@@ -43,7 +43,7 @@ const ShoppingCart = () => {
   const closeCardAddPage = () => setIsCardAddOpen(false);
 
   const addCard = (newCard) => {
-    setCards(prevCards => [...prevCards, newCard]); // 새로운 카드를 기존 카드 목록에 추가
+    setCards(prevCards => [...prevCards, newCard]);
     setIsCardAddOpen(false);
   };
 
@@ -90,13 +90,13 @@ const ShoppingCart = () => {
         )}
       </div>
       <CardManagement 
-        cards={cards} // 카드 상태 전달
+        cards={cards}
         isOpen={isCardManagementOpen} 
         onClose={() => setIsCardManagementOpen(false)} 
         openCardAddPage={openCardAddPage}
       />
       <CardAddPage 
-        addCard={addCard} // addCard 함수 전달
+        addCard={addCard}
         isOpen={isCardAddOpen} 
         onClose={closeCardAddPage} 
       />

@@ -41,18 +41,6 @@
   flex-grow: 1; /* 타이틀이 남은 공간을 차지하도록 설정 */
 }
 
-.card-add-header .close-button {
-  margin-left: auto; /* 닫기 버튼을 오른쪽으로 정렬 */
-  background: none; /* 버튼 배경 제거 */
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.card-add-header .close-icon {
-  width: 24px; /* 아이콘 크기 조정 */
-  height: 24px;
-}
-
 /* 카드 미리보기 섹션 스타일 */
 .preview-section {
   width: 100%;

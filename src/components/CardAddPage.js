@@ -31,12 +31,7 @@ const CardAddPage = ({ addCard, isOpen, onClose }) => {
             <img src={`${process.env.PUBLIC_URL}/images/back-icon.png`} alt="뒤로가기" className="back-icon" />
           </button>
           <h2 className="card-title">카드 추가</h2>
-          <button className="close-button" onClick={onClose}>
-            <img src={`${process.env.PUBLIC_URL}/images/close-icon.png`} alt="닫기" className="close-icon" />
-          </button>
         </div>
-
-        {/* 카드 미리보기 섹션 */}
         <div className="preview-section">
           <div className="live-preview-card">
             <div className="live-preview-card-chip"></div>
@@ -55,8 +50,6 @@ const CardAddPage = ({ addCard, isOpen, onClose }) => {
             </div>
           </div>
         </div>
-
-        {/* 카드 입력 폼 섹션 */}
         <div className="form-section">
           <CardForm onAddCard={handleAddCard} cardData={cardData} setCardData={setCardData} />
         </div>

@@ -14,18 +14,6 @@
     color: black; /* 텍스트 색상 변경 */
   }
   
-  .card-header .close-button {
-    margin-left: auto; /* 닫기 버튼을 오른쪽으로 정렬 */
-    background: none; /* 버튼 배경 제거 */
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  
-  .card-header .close-icon {
-    width: 24px; /* 아이콘 크기 조정 */
-    height: 24px;
-  }
-  
   /* 새로운 카드 등록 */
   .no-cards {
     text-align: center;
@@ -33,7 +21,7 @@
     color: #575757;
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: -30px;
+    margin-bottom: -20px;
   }
   
   .cards-list {
@@ -45,8 +33,9 @@
   /* 카드 추가 버튼 */
   .add-card-button {
     background-color: #e5e5e5;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
+    border: none;
     color: #575757;
     padding: 80px 160px; /* 내부 여백 */
     border-radius: 10px; /* 모서리 둥글게 */
