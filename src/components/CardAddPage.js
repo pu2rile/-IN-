@@ -31,7 +31,9 @@ const CardAddPage = ({ addCard, isOpen, onClose }) => {
             <img src={`${process.env.PUBLIC_URL}/images/back-icon.png`} alt="뒤로가기" className="back-icon" />
           </button>
           <h2 className="title">카드 추가</h2>
-          <button className="close-button" onClick={onClose}>×</button>
+          <button className="close-button" onClick={onClose}>
+            <img src={`${process.env.PUBLIC_URL}/images/close-icon.png`} alt="닫기" className="close-icon" />
+          </button>
         </div>
 
         {/* 카드 미리보기 섹션 */}

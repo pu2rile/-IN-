@@ -19,7 +19,9 @@ const CardManagement = ({ cards, isOpen, onClose, openCardAddPage }) => {
       <div className="card-management">
         <div className="card-header">
           <h2>보유카드</h2>
-          <button className="close-button" onClick={onClose}>×</button>
+          <button className="close-button" onClick={onClose}>
+            <img src={`${process.env.PUBLIC_URL}/images/close-icon.png`} alt="닫기" className="close-icon" />
+          </button>
         </div>
         <div className="cards-list">
           {cards.length === 0 ? (
