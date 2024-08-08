@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AddCardButton from './AddCardButton';
 import RegisteredCard from './RegisteredCard';
 import Modal from './Modal';
 
 const CardManagement = ({ cards, isOpen, onClose, openCardAddPage }) => {
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo(0, 0);
+    }
+  }, [isOpen]);
+
   const handleAddCard = () => {
     openCardAddPage();
   };
