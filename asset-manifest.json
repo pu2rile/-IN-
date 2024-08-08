@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Intern-IN-Meta/static/css/main.f64abea7.css",
+    "main.css": "/Intern-IN-Meta/static/css/main.68d0e2eb.css",
     "main.js": "/Intern-IN-Meta/static/js/main.fae02669.js",
     "index.html": "/Intern-IN-Meta/index.html",
-    "main.f64abea7.css.map": "/Intern-IN-Meta/static/css/main.f64abea7.css.map",
+    "main.68d0e2eb.css.map": "/Intern-IN-Meta/static/css/main.68d0e2eb.css.map",
     "main.fae02669.js.map": "/Intern-IN-Meta/static/js/main.fae02669.js.map"
   },
   "entrypoints": [
-    "static/css/main.f64abea7.css",
+    "static/css/main.68d0e2eb.css",
     "static/js/main.fae02669.js"
   ]
 }
