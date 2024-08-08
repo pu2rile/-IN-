@@ -6,14 +6,36 @@
   padding: 20px;
 }
 
-/* 카드 헤더 스타일 */
+/* 헤더 스타일 */
 .card-add-header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding: 0 20px; /* 좌우 패딩 추가 */
+}
+
+.card-add-header .back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50px;
+  padding: 10px;
+}
+
+.card-add-header .back-icon {
+  width: 24px; /* 아이콘 크기 조정 */
+  height: 24px;
+}
+
+.card-add-header .title {
+  margin-left: 5px; /* 타이틀을 뒤로가기 버튼 옆으로 이동 */
+  flex-grow: 1; /* 타이틀이 남은 공간을 차지하도록 설정 */
+}
+
+.card-add-header .close-button {
+  margin-left: auto; /* 닫기 버튼을 오른쪽으로 정렬 */
+  font-size: 24px;
 }
 
 /* 카드 미리보기 섹션 스타일 */
