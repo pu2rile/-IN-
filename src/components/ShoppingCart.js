@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import CardManagement from './CardManagement';
+import CardAddPage from './CardAddPage';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
   const [quantities, setQuantities] = useState(cart.map(item => ({ id: item.id, quantity: 1 })));
+  const [isCardManagementOpen, setIsCardManagementOpen] = useState(false);
+  const [isCardAddOpen, setIsCardAddOpen] = useState(false);
+  const [cards, setCards] = useState([]); // 카드 상태 추가
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +26,7 @@ const ShoppingCart = () => {
   };
 
   const handleCheckout = () => {
-    navigate('/card-management');
+    setIsCardManagementOpen(true);
   };
 
   const handleQuantityChange = (id, delta) => {
@@ -32,6 +37,14 @@ const ShoppingCart = () => {
           : q
       )
     );
+  };
+
+  const openCardAddPage = () => setIsCardAddOpen(true);
+  const closeCardAddPage = () => setIsCardAddOpen(false);
+
+  const addCard = (newCard) => {
+    setCards(prevCards => [...prevCards, newCard]); // 새로운 카드를 기존 카드 목록에 추가
+    setIsCardAddOpen(false);
   };
 
   return (
@@ -76,6 +89,17 @@ const ShoppingCart = () => {
           </>
         )}
       </div>
+      <CardManagement 
+        cards={cards} // 카드 상태 전달
+        isOpen={isCardManagementOpen} 
+        onClose={() => setIsCardManagementOpen(false)} 
+        openCardAddPage={openCardAddPage}
+      />
+      <CardAddPage 
+        addCard={addCard} // addCard 함수 전달
+        isOpen={isCardAddOpen} 
+        onClose={closeCardAddPage} 
+      />
     </div>
   );
 };

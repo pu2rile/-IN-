@@ -1,36 +1,32 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import AddCardButton from './AddCardButton';
 import RegisteredCard from './RegisteredCard';
+import Modal from './Modal';
 
-const CardManagement = ({ cards }) => {
-  const navigate = useNavigate();
-
+const CardManagement = ({ cards, isOpen, onClose, openCardAddPage }) => {
   const handleAddCard = () => {
-    navigate('/add-card');
-  };
-
-  const handleClose = () => {
-    navigate('/');
+    openCardAddPage();
   };
 
   return (
-    <div className="card-management">
-      <div className="card-header">
-        <h2>보유카드</h2>
-        <button className="close-button" onClick={handleClose}>×</button>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <div className="card-management">
+        <div className="card-header">
+          <h2>보유카드</h2>
+          <button className="close-button" onClick={onClose}>×</button>
+        </div>
+        <div className="cards-list">
+          {cards.length === 0 ? (
+            <div className="no-cards">
+              <p>새로운 카드를 등록해주세요.</p>
+            </div>
+          ) : (
+            cards.map((card, index) => <RegisteredCard key={index} card={card} />)
+          )}
+          <AddCardButton onClick={handleAddCard} />
+        </div>
       </div>
-      <div className="cards-list">
-        {cards.length === 0 ? (
-          <div className="no-cards">
-            <p>새로운 카드를 등록해주세요.</p>
-          </div>
-        ) : (
-          cards.map((card, index) => <RegisteredCard key={index} card={card} />)
-        )}
-        <AddCardButton onClick={handleAddCard} />
-      </div>
-    </div>
+    </Modal>
   );
 };
 
