@@ -149,29 +149,3 @@
 .card-form .register-card-button:hover {
   background-color: #fcf6c6;
 }
-
-/* 추가된 카드 스타일 */
-.registered-card {
-  width: 300px;
-  height: 170px;
-  border-radius: 15px;
-  background-color: #333333;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin-top: 20px; /* 다른 요소와의 간격 */
-  position: relative; /* 자식 요소 배치를 위한 relative 설정 */
-}
-
-.registered-card-chip {
-  width: 55px;
-  height: 35px;
-  background-color: #cbba64;
-  border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
