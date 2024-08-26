@@ -1,0 +1,55 @@
+.payment-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  .payment-success-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .payment-success-title {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  /* 총 n개의 상품을 구매하셨습니다.*/
+  .payment-success-description {
+    font-size: 20px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+  }
+
+  /* 총 결제 금액 */
+  .payment-success-amount {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .payment-success-amount strong {
+    display: block;
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  .payment-success-button {
+    background-color: #ffef64;
+    color: black;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .payment-success-button:hover {
+    background-color: #fcd722;
+  }
