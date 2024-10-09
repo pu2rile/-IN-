@@ -19,8 +19,8 @@ const CardAddPage = ({ addCard, isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleAddCard = (newCard) => {
-    addCard(newCard);
-    onClose();  // 모달 닫기
+    addCard(newCard); // 부모 컴포넌트에서 전달된 addCard 함수 호출
+    onClose(); // 모달 닫기
   };
 
   return (

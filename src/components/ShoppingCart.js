@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import RegisteredCard from './RegisteredCard';
 import CardManagement from './CardManagement';
 import CardAddPage from './CardAddPage';
 import './ShoppingCart.css';
@@ -12,14 +13,32 @@ const ShoppingCart = () => {
   const [isCardManagementOpen, setIsCardManagementOpen] = useState(false);
   const [isCardAddOpen, setIsCardAddOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const [totalItems, setTotalItems] = useState(cart.length);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [shippingCost, setShippingCost] = useState(0);
+
+  const calculateTotals = useCallback(() => {
+    const newTotalItemPrice = cart.reduce((total, item, index) => total + item.price * quantities[index].quantity, 0);
+    const newShippingCost = newTotalItemPrice >= 100000 ? 0 : 3000;
+    const newTotalPrice = newTotalItemPrice + newShippingCost;
+
+    setTotalItems(cart.length);
+    setTotalPrice(newTotalPrice);
+    setShippingCost(newShippingCost);
+  }, [cart, quantities]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    calculateTotals();
+  }, [cart, quantities, cards]);
 
-  const totalItemPrice = cart.reduce((total, item, index) => total + item.price * quantities[index].quantity, 0);
-  const shippingCost = totalItemPrice >= 100000 ? 0 : 3000;
-  const totalPrice = totalItemPrice + shippingCost;
+  useEffect(() => {
+    if (isCardManagementOpen) {
+      const timer = setTimeout(() => {
+        calculateTotals();
+      }, 100); // 지연 추가
+      return () => clearTimeout(timer);
+    }
+  }, [isCardManagementOpen, calculateTotals]);
 
   const handleBackButton = () => {
     navigate('/');
@@ -45,6 +64,7 @@ const ShoppingCart = () => {
   const addCard = (newCard) => {
     setCards(prevCards => [...prevCards, newCard]);
     setIsCardAddOpen(false);
+    setIsCardManagementOpen(true);
   };
 
   return (
@@ -60,7 +80,7 @@ const ShoppingCart = () => {
           <p>장바구니에 상품이 없습니다.</p>
         ) : (
           <>
-            <p className="cart-item-count">현재 {cart.length}개의 상품이 담겨 있습니다.</p>
+            <p className="cart-item-count">현재 {totalItems}개의 상품이 담겨 있습니다.</p>
             <div className="cart-items">
               {cart.map((item, index) => (
                 <div className="cart-item" key={item.id}>
@@ -80,7 +100,7 @@ const ShoppingCart = () => {
               ))}
             </div>
             <div className="cart-summary">
-              <p className="item-price">상품 금액 <span className="price-value">{totalItemPrice.toLocaleString()}원</span></p>
+              <p className="item-price">상품 금액 <span className="price-value">{(totalPrice - shippingCost).toLocaleString()}원</span></p>
               <p className="shipping-cost">배송비 <span className="price-value">{shippingCost.toLocaleString()}원</span></p>
               <div className="divider"></div>
               <p className="total-price">총 금액 <span className="price-value">{totalPrice.toLocaleString()}원</span></p>
@@ -89,6 +109,13 @@ const ShoppingCart = () => {
           </>
         )}
       </div>
+      {isCardManagementOpen && totalItems > 0 && totalPrice > 0 && (
+        <RegisteredCard
+          totalItems={totalItems}
+          totalPrice={totalPrice}
+          card={cards[0] || { cardNumber: '', expiry: '', holderName: '' }}
+        />
+      )}
       <CardManagement 
         cards={cards}
         isOpen={isCardManagementOpen} 

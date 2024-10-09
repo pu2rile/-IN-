@@ -4,7 +4,11 @@ import './PaymentSuccess.css';
 
 const PaymentSuccess = () => {
   const location = useLocation();
-  const { totalItems, totalPrice } = location.state || { totalItems: 0, totalPrice: 0 };
+  const { totalItems = 0, totalPrice = 0 } = location.state || {};
+
+  console.log('Received state in PaymentSuccess:', location.state);
+  console.log('Total Items:', totalItems);  // 올바른 값이 출력되는지 확인
+  console.log('Total Price:', totalPrice);  // 올바른 값이 출력되는지 확인
 
   return (
     <div className="payment-success-container">
